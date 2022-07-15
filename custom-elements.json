@@ -4,6 +4,36 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WhatsappButton",
+          "declaration": {
+            "name": "WhatsappButton",
+            "module": "./WhatsappButton.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/whatsapp-button.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "whatsapp-button",
+          "declaration": {
+            "name": "WhatsappButton",
+            "module": "/src/WhatsappButton.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/WhatsappButton.ts",
       "declarations": [
         {
@@ -128,7 +158,12 @@
             {
               "kind": "field",
               "name": "label",
-              "default": "`Let's chat`"
+              "type": {
+                "text": "string"
+              },
+              "default": "`Let's chat`",
+              "attribute": "label",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -140,16 +175,7 @@
             },
             {
               "kind": "field",
-              "name": "trailingIcon",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "true"
-            },
-            {
-              "kind": "field",
-              "name": "onclick",
-              "default": "() => {\n      fireGaClick();\n      if (this.dialog) this.loadingDialog();\n      if (this.redirect) {\n        window.open(this.link);\n      } else window.open(this.appLink);\n    }"
+              "name": "onclick"
             },
             {
               "kind": "field",
@@ -265,36 +291,6 @@
           "declaration": {
             "name": "WhatsappButton",
             "module": "src/WhatsappButton.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "WhatsappButton",
-          "declaration": {
-            "name": "WhatsappButton",
-            "module": "./WhatsappButton.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/whatsapp-button.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "whatsapp-button",
-          "declaration": {
-            "name": "WhatsappButton",
-            "module": "/src/WhatsappButton.js"
           }
         }
       ]
@@ -2689,24 +2685,6 @@
     {
       "kind": "javascript-module",
       "path": "storybook-static/f43be343.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/block-navigation.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/prettify.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/sorter.js",
       "declarations": [],
       "exports": []
     },
