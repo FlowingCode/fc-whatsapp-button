@@ -1,9 +1,9 @@
 import { css } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Button } from '@material/mwc-button';
-import '@vaadin/vaadin-dialog/vaadin-dialog.js';
-import '@vaadin/vaadin-button/vaadin-button.js';
-import '@vaadin/vaadin-progress-bar/vaadin-progress-bar.js';
+import '@vaadin/dialog';
+import '@vaadin/button';
+import '@vaadin/progress-bar';
 
 function fireGaClick() {
   // @ts-ignore
@@ -19,6 +19,8 @@ function fireGaClick() {
 
 // @ts-ignore
 export class WhatsappButton extends Button {
+  @property({ type: String, reflect: true }) label = '';
+
   @property({ type: String, reflect: true }) phone = '';
 
   @property({ type: String, reflect: true }) text = '';
@@ -174,8 +176,20 @@ export class WhatsappButton extends Button {
     }
   }
 
+  _getLabel() {
+    let buttonLabel = '';
+    if(this.label){
+      buttonLabel = this.label;
+    } else if(this.invitecode){
+      buttonLabel = 'Join Group!';
+    } else {
+      buttonLabel =  `Let's chat`;
+    }
+    return buttonLabel;
+  }
+
   firstUpdated() {
-    this.label = this.label || this.invitecode ? 'Join Group!' : `Let's chat`;
+    this.label = this._getLabel();
     this.phone = this.phone || ``;
     this.text = this.text || `Hi!`;
     const pre = this.invitecode
