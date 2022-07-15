@@ -129,7 +129,6 @@ export class WhatsappButton extends Button {
     super();
     this.label = `Let's chat`;
     this.outlined = true;
-    this.trailingIcon = true;
     this.onclick = () => {
       fireGaClick();
       if (this.dialog) this.loadingDialog();
