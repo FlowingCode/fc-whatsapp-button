@@ -43,6 +43,16 @@
           "members": [
             {
               "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "`Let's chat`",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "phone",
               "type": {
                 "text": "string"
@@ -156,14 +166,8 @@
               "name": "loadingDialog"
             },
             {
-              "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "`Let's chat`",
-              "attribute": "label",
-              "reflects": true
+              "kind": "method",
+              "name": "_getLabel"
             },
             {
               "kind": "field",
@@ -187,6 +191,14 @@
             }
           ],
           "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "`Let's chat`",
+              "fieldName": "label"
+            },
             {
               "name": "phone",
               "type": {
