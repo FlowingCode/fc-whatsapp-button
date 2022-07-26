@@ -27,7 +27,6 @@
 *.mjs
 tsconfig.json
 /.github
-/.storybook
 *.toml
 .editorconfig
 .prettierignore
@@ -35,6 +34,5 @@ button-demo.png
 /dist/stories
 /dist/test
 LICENSE
-/storybook-static
 /docs
 *.tsbuildinfo

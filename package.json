@@ -25,10 +25,7 @@
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "test": "tsc && wtr --coverage",
-    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
-    "storybook": "tsc && npm run analyze -- --exclude dist && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
-    "storybook:build": "tsc && npm run analyze -- --exclude dist && build-storybook -o docs",
-    "deploy-storybook": "storybook-to-ghpages"
+    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\""
   },
   "dependencies": {
     "@material/mwc-button": "^0.26.1",
@@ -41,11 +38,9 @@
     "@custom-elements-manifest/analyzer": "^0.6.3",
     "@open-wc/eslint-config": "^7.0.0",
     "@open-wc/testing": "next",
-    "@storybook/storybook-deployer": "^2.8.11",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "@web/dev-server": "^0.1.32",
-    "@web/dev-server-storybook": "next",
     "@web/test-runner": "next",
     "concurrently": "^7.2.2",
     "eslint": "^8.19.0",
