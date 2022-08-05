@@ -6,6 +6,28 @@
     body {
       background: #fafafa;
     }
+
+    .fullwidth {
+      width: 100%;
+    }
+
+    .button-container {
+      margin: 60px 0;
+    }
+
+    .centered {
+      display: flex;
+      flex-direction: column;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .dialcode {
+      margin-right:5px;
+      width: 100px;
+    }
+
   </style>
 </head>
 <body>
@@ -14,14 +36,67 @@
   <script type="module">
     import { html, render } from 'lit';
     import '../dist/src/whatsapp-button.js';
+    import '@vaadin/text-field';
+    import '@vaadin/form-layout';
+    import '@vaadin/checkbox';
+    import '@vaadin/form-layout/theme/lumo/vaadin-form-item.js';
+    import '@vaadin/form-layout/theme/lumo/vaadin-form-layout.js';
 
     render(
       html`
-      <whatsapp-button phone="7712345678" dialcode="44" text="hey there lets chat!" label="Contact us" responsive leading>
+      <div class="centered button-container">
+        <whatsapp-button>
         </whatsapp-button>
+      </div>
+      <vaadin-form-layout class="centered">
+        <vaadin-form-item>
+          <label slot="label">Label</label>
+          <vaadin-text-field placeholder= "Enter a label for the button" clear-button-visible class="fullwidth" @change="${e => {document.querySelector('whatsapp-button').label = e.target.value}}">
+          </vaadin-text-field>
+        </vaadin-form-item>
+        <vaadin-form-item>
+          <label slot="label">Message Text</label>
+          <vaadin-text-field placeholder= "Enter a message text" clear-button-visible class="fullwidth" @change="${e => {document.querySelector('whatsapp-button').text = e.target.value}}">
+          </vaadin-text-field>
+        </vaadin-form-item>
+        <vaadin-form-item>
+          <label slot="label">Phone</label>
+          <div style="display:flex">
+            <vaadin-text-field class="dialcode" placeholder= "Code" clear-button-visible @change="${e => {document.querySelector('whatsapp-button').dialcode = e.target.value}}"></vaadin-text-field>
+            <vaadin-text-field style="flex-grow:1" class="fullwidth" placeholder= "Phone Number" clear-button-visible @change="${e => {document.querySelector('whatsapp-button').phone = e.target.value}}"></vaadin-text-field>
+          </div>
+        </vaadin-form-item>
+        <vaadin-form-item>
+          <label slot="label">Invite Code</label>
+          <vaadin-text-field placeholder= "Enter a invite code" clear-button-visible class="fullwidth" @change="${e => {document.querySelector('whatsapp-button').invitecode = e.target.value}}">
+          </vaadin-text-field>
+        </vaadin-form-item>
+      </vaadin-form-layout>
+
+      <vaadin-form-layout id="checkboxs-form-layout" class="centered">
+        <vaadin-form-item>
+          <label slot="label">Leading Icon</label>
+          <vaadin-checkbox @change="${e => {document.querySelector('whatsapp-button').leading = e.target.checked}}"> </vaadin-checkbox>
+        </vaadin-form-item>
+        <vaadin-form-item>
+          <label slot="label">Redirect</label>
+          <vaadin-checkbox @change="${e => {document.querySelector('whatsapp-button').redirect = e.target.checked}}"> </vaadin-checkbox>
+        </vaadin-form-item>
+        <vaadin-form-item>
+          <label slot="label">Responsive</label>
+          <vaadin-checkbox @change="${e => {document.querySelector('whatsapp-button').responsive = e.target.checked}}"> </vaadin-checkbox>
+        </vaadin-form-item>
+        <vaadin-form-item>
+          <label slot="label">Dialog</label>
+          <vaadin-checkbox @change="${e => {document.querySelector('whatsapp-button').dialog = e.target.checked}}"> </vaadin-checkbox>
+        </vaadin-form-item>
+      </vaadin-form-layout>
       `,
       document.querySelector('#demo')
     );
+
+
+
   </script>
 </body>
 </html>
