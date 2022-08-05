@@ -43,16 +43,6 @@
           "members": [
             {
               "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "`Let's chat`",
-              "attribute": "label",
-              "reflects": true
-            },
-            {
-              "kind": "field",
               "name": "phone",
               "type": {
                 "text": "string"
@@ -170,6 +160,38 @@
               "name": "_getLabel"
             },
             {
+              "kind": "method",
+              "name": "_updateLink"
+            },
+            {
+              "kind": "method",
+              "name": "_updateAppLink"
+            },
+            {
+              "kind": "method",
+              "name": "_addIcon"
+            },
+            {
+              "kind": "method",
+              "name": "_removeIcon"
+            },
+            {
+              "kind": "method",
+              "name": "_updateIconPosition"
+            },
+            {
+              "kind": "method",
+              "name": "_updateLinkInfo"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
               "kind": "field",
               "name": "outlined",
               "type": {
@@ -191,14 +213,6 @@
             }
           ],
           "attributes": [
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "`Let's chat`",
-              "fieldName": "label"
-            },
             {
               "name": "phone",
               "type": {
