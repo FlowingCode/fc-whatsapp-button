@@ -4,43 +4,75 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "src/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "WhatsappButton",
-          "declaration": {
-            "name": "WhatsappButton",
-            "module": "./WhatsappButton.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/whatsapp-button.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "whatsapp-button",
-          "declaration": {
-            "name": "WhatsappButton",
-            "module": "/src/WhatsappButton.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/WhatsappButton.ts",
+      "path": "src/fc-custom-button.js",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "WhatsappButton",
+          "name": "FcCustomButton",
           "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "template",
+              "static": true
+            }
+          ],
+          "superclass": {
+            "name": "Button",
+            "package": "@vaadin/button/src/vaadin-button.js"
+          },
+          "tagName": "fc-custom-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "FcCustomButton",
+          "declaration": {
+            "name": "FcCustomButton",
+            "module": "src/fc-custom-button.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "fc-custom-button",
+          "declaration": {
+            "name": "FcCustomButton",
+            "module": "src/fc-custom-button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/fc-whatsapp-button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FcWhatsappButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "attribute": "label",
+              "reflects": true
+            },
             {
               "kind": "field",
               "name": "phone",
@@ -169,35 +201,7 @@
             },
             {
               "kind": "method",
-              "name": "_addIcon"
-            },
-            {
-              "kind": "method",
-              "name": "_removeIcon"
-            },
-            {
-              "kind": "method",
-              "name": "_updateIconPosition"
-            },
-            {
-              "kind": "method",
               "name": "_updateLinkInfo"
-            },
-            {
-              "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "default": "''"
-            },
-            {
-              "kind": "field",
-              "name": "outlined",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "true"
             },
             {
               "kind": "field",
@@ -213,6 +217,14 @@
             }
           ],
           "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "fieldName": "label"
+            },
             {
               "name": "phone",
               "type": {
@@ -302,24 +314,71 @@
               "fieldName": "_showButtonInDialog"
             }
           ],
+          "mixins": [
+            {
+              "name": "ThemableMixin",
+              "package": "@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js"
+            }
+          ],
           "superclass": {
-            "name": "Button",
-            "package": "@material/mwc-button"
+            "name": "LitElement",
+            "package": "lit"
           },
-          "tagName": "whatsapp-button",
+          "tagName": "fc-whatsapp-button",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "WhatsappButton",
+          "name": "FcWhatsappButton",
           "declaration": {
-            "name": "WhatsappButton",
-            "module": "src/WhatsappButton.ts"
+            "name": "FcWhatsappButton",
+            "module": "src/fc-whatsapp-button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "fc-whatsapp-button",
+          "declaration": {
+            "name": "FcWhatsappButton",
+            "module": "src/fc-whatsapp-button.ts"
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "FcWhatsappButton",
+          "declaration": {
+            "name": "FcWhatsappButton",
+            "module": "./fc-whatsapp-button.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/block-navigation.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/prettify.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/sorter.js",
+      "declarations": [],
+      "exports": []
     }
   ]
 }

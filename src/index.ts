@@ -1,1 +1,1 @@
-export { WhatsappButton } from './WhatsappButton.js';
+export { FcWhatsappButton } from './fc-whatsapp-button.js';

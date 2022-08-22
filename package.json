@@ -1,21 +1,22 @@
 {
-  "name": "@flowingcode/whatsapp-button",
-  "version": "4.2.0",
-  "description": "Simple Whatsapp button web component",
+  "name": "@flowingcode/fc-whatsapp-button",
+  "version": "1.0.0",
+  "description": "Simple Whatsapp Button Web Component",
   "license": "MIT",
   "author": "Mohammed Shah <@smashah>",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FlowingCode/whatsapp-button"
+    "url": "https://github.com/FlowingCode/fc-whatsapp-button"
   },
   "publishConfig": {
     "access": "public"
   },
   "exports": {
     ".": "./dist/src/index.js",
-    "./whatsapp-button.js": "./dist/src/whatsapp-button.js"
+    "./custom-button.js": "./dist/src/fc-custom-button.js",
+    "./whatsapp-button.js": "./dist/src/fc-whatsapp-button.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
@@ -28,11 +29,13 @@
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\""
   },
   "dependencies": {
-    "@material/mwc-button": "^0.26.1",
-    "@vaadin/button": "^23.1.3",
-    "@vaadin/dialog": "^23.1.3",
-    "@vaadin/progress-bar": "^23.1.3",
-    "lit": "^2.2.7"
+    "@vaadin/button": "23.1.5",
+    "@vaadin/dialog": "23.1.5",
+    "@vaadin/icon": "23.1.5",
+    "@vaadin/progress-bar": "23.1.5",
+    "@vaadin/vaadin-themable-mixin": "23.1.5",
+    "lit": "^2.2.7",
+    "@polymer/polymer": "^3.4.1"
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.6.3",
@@ -40,6 +43,9 @@
     "@open-wc/testing": "next",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "@vaadin/checkbox": "^23.1.3",
+    "@vaadin/form-layout": "^23.1.3",
+    "@vaadin/text-field": "^23.1.3",
     "@web/dev-server": "^0.1.32",
     "@web/test-runner": "next",
     "concurrently": "^7.2.2",
@@ -49,10 +55,7 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "tslib": "^2.4.0",
-    "typescript": "^4.7.4",
-    "@vaadin/text-field": "^23.1.3",
-    "@vaadin/form-layout": "^23.1.3",
-    "@vaadin/checkbox": "^23.1.3"
+    "typescript": "^4.7.4"
   },
   "customElements": "custom-elements.json",
   "eslintConfig": {
