@@ -1,8 +1,12 @@
 # @flowingcode/fc-whatsapp-button Web Component
 
-Web Component to easily start WhatsApp conversations. It is based on [@vaadin/button](https://www.npmjs.com/package/@vaadin/button). 
+Web Component to easily start WhatsApp conversations. It is based on [@vaadin/button](https://www.npmjs.com/package/@vaadin/button).
 
 This component is a fork of [@open-wa/whatsapp-button](https://github.com/open-wa/whatsapp-button).
+
+## Online demo
+
+Online demo [here](https://fc-whatsapp-button.demos.flowingcode.com/).
 
 ## Installation
 
