@@ -65,6 +65,10 @@ export class FcWhatsappButton extends ThemableMixin(LitElement) {
         vertical-align: top;
       }
 
+      #whatsapp-icon:hover {
+        box-shadow: none;
+      }
+
       .leading-icon {
         margin-left: 0px;
         margin-right: 5px;
