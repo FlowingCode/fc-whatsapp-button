@@ -1,4 +1,6 @@
-# @flowingcode/fc-whatsapp-button Web Component
+[![npm version](https://badgen.net/npm/v/@flowingcode/fc-whatsapp-button)](https://www.npmjs.com/package/@flowingcode/fc-whatsapp-button)
+
+# @flowingcode/fc-whatsapp-button
 
 Web Component to easily start WhatsApp conversations. It is based on [@vaadin/button](https://www.npmjs.com/package/@vaadin/button).
 
