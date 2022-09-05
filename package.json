@@ -17,8 +17,8 @@
   },
   "exports": {
     ".": "./dist/src/index.js",
-    "./custom-button.js": "./dist/src/fc-custom-button.js",
-    "./whatsapp-button.js": "./dist/src/fc-whatsapp-button.js"
+    "./dist/src/fc-custom-button.js": "./dist/src/fc-custom-button.js",
+    "./dist/src/fc-whatsapp-button.js": "./dist/src/fc-whatsapp-button.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
