@@ -37,5 +37,13 @@ npm i @flowingcode/fc-whatsapp-button
 npm run test
 ```
 
+## Creating static demo site
+
+1. Make sure to have executed `npm install`
+
+2. Execute `npx -p parcel npm run buildstatic`
+
+3. The static site will be generated in /dist
+
 ## License
 For license terms, see LICENSE.txt.
