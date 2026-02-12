@@ -2,7 +2,7 @@
  * #%L
  * @flowingcode/fc-whatsapp-button
  * %%
- * Copyright (C) 2022 - 2024 Flowing Code
+ * Copyright (C) 2022 - 2026 Flowing Code
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,29 @@
  * limitations under the License.
  * #L%
  */
-import { html } from '@polymer/polymer/polymer-element.js';
+import { registerStyles, css } from '@vaadin/vaadin-themable-mixin/vaadin-themable-mixin.js';
 import { Button } from '@vaadin/button/src/vaadin-button.js';
+
+registerStyles('fc-custom-button', css`
+   :host([part='custom-button']) {
+    border-radius: 6px;
+    box-shadow: 0 4px 9px #00000024;
+    border: none;
+    background: #02e777;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 180px;
+    font-size: 14px;
+    transition: all ease-in-out 100ms;
+  }
+
+  [part='label'] {
+    text-transform: uppercase;
+  }
+`);
 
 export class FcCustomButton extends Button {
 
@@ -26,33 +47,6 @@ export class FcCustomButton extends Button {
     return 'fc-custom-button';
   }
 
-  static get template () {
-    return html`
-      <style>
-        :host [part='label'] {
-          text-transform: uppercase;
-        }
-
-        :host([part='custom-button']) {
-          border-radius: 6px;
-          box-shadow: 0 4px 9px #00000024;
-          border: none;
-          background: #02e777;
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 40px;
-          width: 180px;
-          font-size: 14px;
-          transition: all ease-in-out 100ms;
-        }
-
-      </style>
-      ${super.template}
-
-      `;
-  }
 }
 
 customElements.define('fc-custom-button', FcCustomButton);

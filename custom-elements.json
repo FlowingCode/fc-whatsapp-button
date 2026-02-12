@@ -15,11 +15,6 @@
               "kind": "field",
               "name": "is",
               "static": true
-            },
-            {
-              "kind": "field",
-              "name": "template",
-              "static": true
             }
           ],
           "superclass": {
@@ -361,24 +356,6 @@
           }
         }
       ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/block-navigation.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/prettify.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "coverage/lcov-report/sorter.js",
-      "declarations": [],
-      "exports": []
     }
   ]
 }
