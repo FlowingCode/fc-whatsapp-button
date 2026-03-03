@@ -84,7 +84,6 @@ export class FcWhatsappButton extends ThemableMixin(LitElement) {
       }
 
       #whatsapp-icon {
-        display: inline-block;
         font-size: 18px;
         vertical-align: top;
       }
